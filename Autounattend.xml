@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unattend xmlns="urn:schemas-microsoft-com:unattend">
+	<settings pass="windowsPE">
+		<component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<SetupUILanguage>
+				<UILanguage>en-US</UILanguage>
+			</SetupUILanguage>
+			<InputLocale>1033:00000409</InputLocale>
+			<SystemLocale>en-US</SystemLocale>
+			<UILanguage>en-US</UILanguage>
+			<UILanguageFallback>en-US</UILanguageFallback>
+			<UserLocale>en-US</UserLocale>
+		</component>
+		<component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<SetupUILanguage>
+				<UILanguage>en-US</UILanguage>
+			</SetupUILanguage>
+			<InputLocale>1033:00000409</InputLocale>
+			<SystemLocale>en-US</SystemLocale>
+			<UILanguage>en-US</UILanguage>
+			<UILanguageFallback>en-US</UILanguageFallback>
+			<UserLocale>en-US</UserLocale>
+		</component>
+		<component name="Microsoft-Windows-Setup" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<DiskConfiguration>
+				<Disk wcm:action="add">
+					<DiskID>0</DiskID>
+					<CreatePartitions>
+						<CreatePartition wcm:action="add">
+							<Order>1</Order>
+							<Size>100</Size>
+							<Type>Primary</Type>
+						</CreatePartition>
+						<CreatePartition wcm:action="add">
+							<Order>2</Order>
+							<Extend>true</Extend>
+							<Type>Primary</Type>
+						</CreatePartition>
+					</CreatePartitions>
+					<WillWipeDisk>true</WillWipeDisk>
+					<ModifyPartitions>
+						<ModifyPartition wcm:action="add">
+							<Active>true</Active>
+							<Format>NTFS</Format>
+							<Order>1</Order>
+							<PartitionID>1</PartitionID>
+							<Label>System Reserved</Label>
+						</ModifyPartition>
+						<ModifyPartition wcm:action="add">
+							<Active>true</Active>
+							<Format>NTFS</Format>
+							<Label>OS</Label>
+							<Letter>C</Letter>
+							<Order>2</Order>
+							<PartitionID>2</PartitionID>
+						</ModifyPartition>
+					</ModifyPartitions>
+				</Disk>
+				<WillShowUI>OnError</WillShowUI>
+			</DiskConfiguration>
+			<UserData>
+				<AcceptEula>true</AcceptEula>
+				<FullName></FullName>
+				<Organization></Organization>
+				<ProductKey>
+					<Key>12345-ABCDE-67890-FGHIJ-KLMNO</Key>
+				</ProductKey>
+			</UserData>
+			<ImageInstall>
+				<OSImage>
+					<InstallFrom>
+						<MetaData wcm:action="add">
+							<Key>/IMAGE/NAME</Key>
+							<Value>Windows Vista BUSINESS</Value>
+						</MetaData>
+					</InstallFrom>
+					<InstallTo>
+						<DiskID>0</DiskID>
+						<PartitionID>2</PartitionID>
+					</InstallTo>
+					<WillShowUI>OnError</WillShowUI>
+					<InstallToAvailablePartition>false</InstallToAvailablePartition>
+				</OSImage>
+			</ImageInstall>
+		</component>
+		<component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<DiskConfiguration>
+				<Disk wcm:action="add">
+					<DiskID>0</DiskID>
+					<CreatePartitions>
+						<CreatePartition wcm:action="add">
+							<Order>1</Order>
+							<Size>100</Size>
+							<Type>Primary</Type>
+						</CreatePartition>
+						<CreatePartition wcm:action="add">
+							<Order>2</Order>
+							<Extend>true</Extend>
+							<Type>Primary</Type>
+						</CreatePartition>
+					</CreatePartitions>
+					<WillWipeDisk>true</WillWipeDisk>
+					<ModifyPartitions>
+						<ModifyPartition wcm:action="add">
+							<Active>true</Active>
+							<Format>NTFS</Format>
+							<Order>1</Order>
+							<PartitionID>1</PartitionID>
+							<Label>System Reserved</Label>
+						</ModifyPartition>
+						<ModifyPartition wcm:action="add">
+							<Active>true</Active>
+							<Format>NTFS</Format>
+							<Label>OS</Label>
+							<Letter>C</Letter>
+							<Order>2</Order>
+							<PartitionID>2</PartitionID>
+						</ModifyPartition>
+					</ModifyPartitions>
+				</Disk>
+				<WillShowUI>OnError</WillShowUI>
+			</DiskConfiguration>
+			<UserData>
+				<AcceptEula>true</AcceptEula>
+				<FullName></FullName>
+				<Organization></Organization>
+				<ProductKey>
+					<Key>12345-ABCDE-67890-FGHIJ-KLMNO</Key>
+				</ProductKey>
+			</UserData>
+			<ImageInstall>
+				<OSImage>
+					<InstallFrom>
+						<MetaData wcm:action="add">
+							<Key>/IMAGE/NAME</Key>
+							<Value>Windows Vista BUSINESS</Value>
+						</MetaData>
+					</InstallFrom>
+					<InstallTo>
+						<DiskID>0</DiskID>
+						<PartitionID>2</PartitionID>
+					</InstallTo>
+					<WillShowUI>OnError</WillShowUI>
+					<InstallToAvailablePartition>false</InstallToAvailablePartition>
+				</OSImage>
+			</ImageInstall>
+		</component>
+	</settings>
+	<settings pass="generalize">
+		<component name="Microsoft-Windows-Security-Licensing-SLC" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<SkipRearm>1</SkipRearm>
+		</component>
+		<component name="Microsoft-Windows-Security-Licensing-SLC" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<SkipRearm>1</SkipRearm>
+		</component>
+	</settings>
+	<settings pass="specialize">
+		<component name="Microsoft-Windows-Security-Licensing-SLC-UX" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<SkipAutoActivation>true</SkipAutoActivation>
+		</component>
+		<component name="Microsoft-Windows-Security-Licensing-SLC-UX" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<SkipAutoActivation>true</SkipAutoActivation>
+		</component>
+		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<ComputerName>ArchDev-PC</ComputerName>
+			<ProductKey>12345-ABCDE-67890-FGHIJ-KLMNO</ProductKey>
+			<TimeZone>FLE Standard Time</TimeZone>
+		</component>
+		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<ComputerName>ArchDev-PC</ComputerName>
+			<ProductKey>12345-ABCDE-67890-FGHIJ-KLMNO</ProductKey>
+			<TimeZone>FLE Standard Time</TimeZone>
+		</component>
+	</settings>
+	<settings pass="oobeSystem">
+		<component name="Microsoft-Windows-International-Core" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<InputLocale>1033:00000409</InputLocale>
+			<UILanguage>en-US</UILanguage>
+			<UserLocale>en-US</UserLocale>
+		</component>
+		<component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<InputLocale>1033:00000409</InputLocale>
+			<UILanguage>en-US</UILanguage>
+			<UserLocale>en-US</UserLocale>
+		</component>
+		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<RegisteredOwner></RegisteredOwner>
+			<OOBE>
+				<HideEULAPage>true</HideEULAPage>
+				<NetworkLocation>Other</NetworkLocation>
+				<ProtectYourPC>1</ProtectYourPC>
+				<SkipMachineOOBE>false</SkipMachineOOBE>
+				<SkipUserOOBE>false</SkipUserOOBE>
+			</OOBE>
+			<UserAccounts>
+				<LocalAccounts>
+					<LocalAccount wcm:action="add">
+						<Password>
+							<Value>Pa$$w0rd</Value>
+							<PlainText>true</PlainText>
+						</Password>
+						<Description>ArchDev</Description>
+						<DisplayName>ArchDev</DisplayName>
+						<Group>Administrators</Group>
+						<Name>ArchDev</Name>
+					</LocalAccount>
+				</LocalAccounts>
+			</UserAccounts>
+			<AutoLogon>
+				<Password>
+					<Value>Pa$$w0rd</Value>
+					<PlainText>true</PlainText>
+				</Password>
+				<Enabled>true</Enabled>
+				<Username>ArchDev</Username>
+			</AutoLogon>
+			<DisableAutoDaylightTimeSet>false</DisableAutoDaylightTimeSet>
+			<FirstLogonCommands>
+				<SynchronousCommand wcm:action="add">
+					<Order>1</Order>
+					<Description>Disable Auto Updates</Description>
+					<CommandLine>reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" /v AUOptions /t REG_DWORD /d 1 /f</CommandLine>
+				</SynchronousCommand>
+				<SynchronousCommand wcm:action="add">
+					<Order>2</Order>
+					<Description>Hide Set Network Location</Description>
+					<CommandLine>reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\NewNetworks" /v NetworkList /t REG_MULTI_SZ /d "" /f</CommandLine>
+				</SynchronousCommand>
+				<SynchronousCommand wcm:action="add">
+					<Order>3</Order>
+					<Description>Hide Set Welcome Center Window</Description>
+					<CommandLine>reg delete "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v WindowsWelcomeCenter /f</CommandLine>
+				</SynchronousCommand>
+			</FirstLogonCommands>
+		</component>
+		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<RegisteredOwner></RegisteredOwner>
+			<OOBE>
+				<HideEULAPage>true</HideEULAPage>
+				<NetworkLocation>Other</NetworkLocation>
+				<ProtectYourPC>1</ProtectYourPC>
+				<SkipMachineOOBE>false</SkipMachineOOBE>
+				<SkipUserOOBE>false</SkipUserOOBE>
+			</OOBE>
+			<UserAccounts>
+				<LocalAccounts>
+					<LocalAccount wcm:action="add">
+						<Password>
+							<Value>Pa$$w0rd</Value>
+							<PlainText>true</PlainText>
+						</Password>
+						<Description>ArchDev</Description>
+						<DisplayName>ArchDev</DisplayName>
+						<Group>Administrators</Group>
+						<Name>ArchDev</Name>
+					</LocalAccount>
+				</LocalAccounts>
+			</UserAccounts>
+			<AutoLogon>
+				<Password>
+					<Value>Pa$$w0rd</Value>
+					<PlainText>true</PlainText>
+				</Password>
+				<Enabled>true</Enabled>
+				<Username>ArchDev</Username>
+			</AutoLogon>
+			<DisableAutoDaylightTimeSet>false</DisableAutoDaylightTimeSet>
+			<FirstLogonCommands>
+				<SynchronousCommand wcm:action="add">
+					<Order>1</Order>
+					<Description>Disable Auto Updates</Description>
+					<CommandLine>reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" /v AUOptions /t REG_DWORD /d 1 /f</CommandLine>
+				</SynchronousCommand>
+				<SynchronousCommand wcm:action="add">
+					<Order>2</Order>
+					<Description>Hide Set Network Location Window</Description>
+					<CommandLine>reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\NewNetworks" /v NetworkList /t REG_MULTI_SZ /d "" /f</CommandLine>
+				</SynchronousCommand>
+				<SynchronousCommand wcm:action="add">
+					<Order>3</Order>
+					<Description>Hide Set Welcome Center Window</Description>
+					<CommandLine>reg delete "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v WindowsWelcomeCenter /f</CommandLine>
+				</SynchronousCommand>
+			</FirstLogonCommands>
+		</component>
+	</settings>
+</unattend>
