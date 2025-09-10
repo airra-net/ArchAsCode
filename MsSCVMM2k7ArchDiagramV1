@@ -1,0 +1,323 @@
+. .\PSVisio.ps1
+
+# Step 1.
+# Create Visio Application
+# Create Document from Blank Template
+# Set Active Page
+New-VisioApplication
+New-VisioDocument
+Set-VisioPage
+
+# Step 2.
+# Add Basic Visio Stensils
+# Set Masters Item Rectangle
+Add-VisioStensil -Name "Basic" -File "BASIC_M.vss"
+Set-VisioStensilMasterItem -Stensil Basic -Item "Rectangle"
+
+# Step 3.
+# Draw Main Rectangle, Set Size, Set Colour
+# Set Text, Size, Color, Align
+# Draw Line, Set Weight, Color
+Draw-VisioItem -Master "Rectangle" -X 6.375 -Y 7.125 -Width 12.2501 -Height 7.25 -FillForegnd "RGB(0,153,204)"`
+ -LinePattern 0 -Text "Microsoft Virtual Machine Manager Architecture" -VerticalAlign '0' -ParaHorzAlign '0'`
+ -CharSize "20 pt" -CharColor "RGB(255,255,255)"
+Draw-VisioLine -BeginX 0.3125 -BeginY 10.3438 -EndX 12.4948 -EndY 10.3438 -LineWeight "1 pt" -LineColor "RGB(255,255,255)"
+ 
+# Step 4.
+# Draw Client Rectangle, Set Size, Set Colour
+# Set Text, Align
+# Draw Line
+Draw-VisioItem -Master "Rectangle" -X 1.7656 -Y 9.2344 -Width 2.7813 -Height 1.9688 -FillForegnd "RGB(209,235,241)"`
+ -LinePattern 1 -Text "Client" -VerticalAlign '0' -ParaHorzAlign '1'`
+ -CharSize "14 pt" -CharColor "RGB(0,0,0)"
+Draw-VisioLine -BeginX 0.4297 -BeginY 9.9427 -EndX 3.0833 -EndY 9.9427 -LineWeight "0.5 pt" -LineColor "RGB(0,0,0)"
+
+# Step 5.
+# Add Computer Items Visio Stensils
+# Set Masters item PC
+Add-VisioStensil -Name "Computer" -File "COMPS_M.vss"
+Set-VisioStensilMasterItem -Stensil "Computer" -Item "PC"
+
+# Step 6.
+# Draw item PC
+# Set Text, Size
+Draw-VisioItem -Master "PC" -X 1.1173 -Y 9.1693 -Text "Administrator Console" -CharSize "10 pt"
+
+# Step 7.
+# Draw Powershell Icon
+# Set Position, Size
+# Set Text
+Draw-VisioIcon -IconPath "c:\!\powershell.png" -Width 0.9843 -Height 0.9843 -PinX 2.5547 -PinY 9.2682 `
+ -Text "Windows Powershell" -CharSize "10 pt"
+
+# Step 8.
+# Draw WCF Rectangle, Set Size, Set Colour
+# Set Text, Align
+# Draw Line
+Draw-VisioItem -Master "Rectangle" -X 4.2682 -Y 6.9063 -Width 1.5 -Height 6.625 -FillForegnd "RGB(255,255,255)"`
+ -LinePattern 1 -Text "Windows Communication Foundation" -VerticalAlign '0'`
+ -CharSize "14 pt"
+Draw-VisioLine -BeginX 3.5664 -BeginY 9.4063 -EndX 4.9492 -EndY 9.4063 -LineWeight "0.5 pt" -LineColor "RGB(0,0,0)"
+
+# Step 9.----
+# Draw WCF Icon
+# Set Position, Size
+Draw-VisioIcon -IconPath "c:\!\WCF.png" -Width 1.412 -Height 1.0443 -PinX 4.2708 -PinY 6.9779
+
+# Step 10.
+# Draw Line communication from Client to WCF
+# Set Arrow
+Draw-VisioLine -BeginX 3.1563 -BeginY 9.2396 -EndX 3.5174 -EndY 9.2396 -LineColor "RGB(255,255,255)" -BeginArrow 4 -EndArrow 4
+
+# Step 11.
+# Draw Web Client Rectangle, Set Size, Set Colour
+# Set Text, Align
+# Draw Line
+Draw-VisioItem -Master "Rectangle" -X 1.7656 -Y 6.8776 -Width 2.7813 -Height 2.1094 -FillForegnd "RGB(209,235,241)"`
+ -LinePattern 1 -Text "Web Client" -VerticalAlign '0'`
+ -CharSize "14 pt"
+Draw-VisioLine -BeginX 0.4297 -BeginY 7.6562 -EndX 3.0833 -EndY 7.6562 -LineWeight "0.5 pt" -LineColor "RGB(0,0,0)"
+
+# Step 12.
+# Draw Self Service Portal Icon
+# Set Position, Size
+# Set Text
+Draw-VisioIcon -IconPath "c:\!\SelfServicePortal.png" -Width 0.8438 -Height 0.8438 -PinX 1.1094 -PinY 6.9271 `
+ -Text "Self Service Portal" -CharSize "10 pt"
+
+# Step 13.
+# Draw Powershell Icon
+# Set Position, Size
+# Set Text
+Draw-VisioIcon -IconPath "c:\!\powershell.png" -Width 0.9843 -Height 0.9843 -PinX 2.4922 -PinY 6.9192 `
+ -Text "Windows Powershell" -CharSize "10 pt"
+
+# Step 14.
+# Draw Line communication from Web Client to WCF
+# Set Arrow
+Draw-VisioLine -BeginX 3.158 -BeginY 6.8802 -EndX 3.5191 -EndY 6.8802 -LineColor "RGB(255,255,255)" -BeginArrow 4 -EndArrow 4
+
+# Step 15.
+# Draw Scripting Client Rectangle, Set Size, Set Colour
+# Set Text, Align
+# Draw Line
+Draw-VisioItem -Master "Rectangle" -X 1.7657 -Y 4.5469 -Width 2.7813 -Height 1.9062 -FillForegnd "RGB(209,235,241)"`
+ -LinePattern 1 -Text "Scripting Client" -VerticalAlign '0'`
+ -CharSize "14 pt"
+Draw-VisioLine -BeginX 0.4297 -BeginY 5.1979 -EndX 3.0834 -EndY 5.1979 -LineWeight "0.5 pt" -LineColor "RGB(0,0,0)"
+
+# Step 16.
+# Draw Powershell Icon
+# Set Position, Size
+# Set Text
+Draw-VisioIcon -IconPath "c:\!\powershell.png" -Width 0.9843 -Height 0.9843 -PinX 1.7631 -PinY 4.6015 `
+ -Text "Windows Powershell" -CharSize "10 pt"
+
+# Step 17.
+# Draw Line communication from Scripting Client to WCF
+# Set Arrow
+Draw-VisioLine -BeginX 3.158 -BeginY 4.5729 -EndX 3.5191 -EndY 4.5729 -LineColor "RGB(255,255,255)" -BeginArrow 4 -EndArrow 4
+
+# Step 18.
+# Draw Microsoft System Center
+# Virtual Machine Manager Server 2007 Rectangle
+# Set Size, Set Colour
+# Set Text, Align
+Draw-VisioItem -Master "Rectangle" -X 6.3281 -Y 8.2812 -Width 1.5 -Height 2.8125 -FillForegnd "RGB(255,192,0)"`
+ -LinePattern 1 -Text "Microsoft System Center Virtual Machine Manager Server 2007" -CharSize "14 pt"
+
+# Step 19.
+# Draw Microsoft SQL Server 2005 Rectangle
+# Set Size, Set Colour
+# Set Text, Align
+Draw-VisioItem -Master "Rectangle" -X 6.3281 -Y 4.9219 -Width 1.5 -Height 2.6563 -FillForegnd "RGB(255,192,0)"`
+ -LinePattern 1 -Text "Microsoft SQL Server 2005" -CharSize "14 pt"
+
+# Step 20.
+# Add Server Items Visio Stensils
+# Set Masters item Management Server and Database Server
+Add-VisioStensil -Name "Server" -File "SERVER_M.vss"
+Set-VisioStensilMasterItem -Stensil "Server" -Item "Management server"
+Set-VisioStensilMasterItem -Stensil "Server" -Item "Database server"
+
+# Step 21.
+# Draw item Management Server
+Draw-VisioItem -Master "Management server" -X 5.6043 -Y 9.7421
+
+# Step 22.
+# Draw item Management Server
+Draw-VisioItem -Master "Database server" -X 5.5832 -Y 6.3046
+
+# Step 23.
+# Draw Line communication from WCF to Microsoft System Center
+# Virtual Machine Manager Server 2007
+# Set Arrow
+Draw-VisioLine -BeginX 5.0052 -BeginY 8.2604 -EndX 5.6024 -EndY 8.2604 -LineColor "RGB(255,255,255)" -BeginArrow 4 -EndArrow 4
+
+# Step 24.
+# Draw Line communication from Microsoft System Center
+# Virtual Machine Manager Server 2007 to Microsoft SQL Server 2005
+# Set Arrow
+Draw-VisioLine -BeginX 6.3272 -BeginY 6.2344 -EndX 6.3272 -EndY 6.8802 -LineColor "RGB(255,255,255)" -BeginArrow 4 -EndArrow 0
+
+# Step 25.
+# Draw Win-RM Rectangle, Set Size, Set Colour
+# Set Text, Align
+# Draw Line
+Draw-VisioItem -Master "Rectangle" -X 8.4375 -Y 6.9219 -Width 1.5 -Height 6.6563 -FillForegnd "RGB(255,255,255)"`
+ -LinePattern 1 -Text "Windows Remote Managemet (Win-RM)" -VerticalAlign '0'`
+ -CharSize "14 pt"
+Draw-VisioLine -BeginX 7.75 -BeginY 9.1875 -EndX 9.1328 -EndY 9.1875 -LineWeight "0.5 pt" -LineColor "RGB(0,0,0)"
+
+# Step 26.
+# Draw Win-RM Icon
+# Set Position, Size
+Draw-VisioIcon -IconPath "c:\!\Win-RM.png" -Width 1.1563 -Height 1.1563 -PinX 8.4293 -PinY 7
+
+# Step 27.
+# Draw Line communication from Win-RM to Microsoft System Center
+# Virtual Machine Manager Server 2007
+# Set Arrow
+Draw-VisioLine -BeginX 7.0781 -BeginY 8.2812 -EndX 7.6753 -EndY 8.2812 -LineColor "RGB(255,255,255)" -BeginArrow 4 -EndArrow 4
+
+# Step 28.
+# Draw P2V Source Rectangle, Set Size, Set Colour
+# Set Text, Align
+# Draw Line
+Draw-VisioItem -Master "Rectangle" -X 10.9844 -Y 9.5 -Width 2.7813 -Height 1.5 -FillForegnd "RGB(209,235,241)"`
+ -LinePattern 1 -Text "P2V Source" -VerticalAlign '0'`
+ -CharSize "14 pt"
+Draw-VisioLine -BeginX 9.6485 -BeginY 9.9739 -EndX 12.3021 -EndY 9.9739 -LineWeight "0.5 pt" -LineColor "RGB(0,0,0)"
+
+# Step 29.
+# Draw VMM Agent Icon
+# Set Position, Size
+# Set Text
+Draw-VisioIcon -IconPath "c:\!\VMMAgent.png" -Width 0.8438 -Height 0.8438 -PinX 10.2969 -PinY 9.5 `
+ -Text "VMM Agent" -CharSize "10 pt"
+
+# Step 30.
+# Draw Powershell Icon
+# Set Position, Size
+# Set Text
+Draw-VisioIcon -IconPath "c:\!\powershell.png" -Width 0.7968 -Height 0.7968 -PinX 11.6016 -PinY 9.6016 `
+ -Text "Windows Powershell" -CharSize "10 pt"
+
+# Step 31.
+# Draw Line communication from P2V Source to Win-RM
+# Set Arrow
+Draw-VisioLine -BeginX 9.1875 -BeginY 9.487 -EndX 9.599 -EndY 9.487 -LineColor "RGB(255,255,255)" -BeginArrow 4 -EndArrow 4
+
+# Step 32.
+# Draw Host Rectangle, Set Size, Set Colour
+# Set Text, Align
+# Draw Line
+Draw-VisioItem -Master "Rectangle" -X 10.9792 -Y 6.9427 -Width 2.7813 -Height 1.5 -FillForegnd "RGB(209,235,241)"`
+ -LinePattern 1 -Text "Host" -VerticalAlign '0'`
+ -CharSize "14 pt"
+Draw-VisioLine -BeginX 9.6472 -BeginY 7.4219 -EndX 12.3008 -EndY 7.4219 -LineWeight "0.5 pt" -LineColor "RGB(0,0,0)"
+
+# Step 33.
+# Draw VMM Agent Icon
+# Set Position, Size
+# Set Text
+Draw-VisioIcon -IconPath "c:\!\VMMAgent.png" -Width 0.8438 -Height 0.8438 -PinX 10.2917 -PinY 6.9427 `
+ -Text "VMM Agent" -CharSize "10 pt"
+
+# Step 34.
+# Draw Microsoft Virtual Server 2005 R2 Icon
+# Set Position, Size
+# Set Text
+Draw-VisioIcon -IconPath "c:\!\WS.jpg" -Width 0.8125 -Height 0.7404 -PinX 11.5938 -PinY 6.9423 `
+ -Text "Microsoft Virtual Server 2005 R2" -CharSize "7 pt"
+
+# Step 35.
+# Draw Line communication from Host to Win-RM
+# Set Arrow
+Draw-VisioLine -BeginX 9.1849 -BeginY 6.941 -EndX 9.5964 -EndY 6.941 -LineColor "RGB(255,255,255)" -BeginArrow 4 -EndArrow 4
+
+# Step 36.
+# Draw Library Rectangle, Set Size, Set Colour
+# Set Text, Align
+# Draw Line
+Draw-VisioItem -Master "Rectangle" -X 10.9792 -Y 4.3542 -Width 2.7813 -Height 1.5 -FillForegnd "RGB(209,235,241)"`
+ -LinePattern 1 -Text "Library" -VerticalAlign '0'`
+ -CharSize "14 pt"
+Draw-VisioLine -BeginX 9.6419 -BeginY 4.8073 -EndX 12.2955 -EndY 4.8073 -LineWeight "0.5 pt" -LineColor "RGB(0,0,0)"
+
+# Step 37.
+# Draw VMM Agent Icon
+# Set Position, Size
+# Set Text
+Draw-VisioIcon -IconPath "c:\!\VMMAgent.png" -Width 0.8438 -Height 0.8438 -PinX 10.2917 -PinY 4.3542 `
+ -Text "VMM Agent" -CharSize "10 pt"
+
+# Step 38.
+# Draw Windows Server 2003 R2 Icon
+# Set Position, Size
+# Set Text
+Draw-VisioIcon -IconPath "c:\!\WS.jpg" -Width 0.8125 -Height 0.7404 -PinX 11.5625 -PinY 4.3702 `
+ -Text "Windows Server 2003 R2" -CharSize "7 pt"
+
+# Step 39.
+# Draw Line communication from Library to Win-RM
+# Set Arrow
+Draw-VisioLine -BeginX 9.1901 -BeginY 4.3611 -EndX 9.6016 -EndY 4.3611 -LineColor "RGB(255,255,255)" -BeginArrow 4 -EndArrow 4
+
+# Step 40.
+# Draw BITS Rectangle, Set Size, Set Colour
+# Set Text, Align
+# Draw Line
+Draw-VisioItem -Master "Rectangle" -X 10.9844 -Y 8.2292 -Width 2.75 -Height 0.5625 -FillForegnd "RGB(255,255,0)"`
+ -LinePattern 1 -Text "BITS" -ParaHorzAlign '0'`
+ -CharSize "14 pt"
+
+# Step 41.
+# Draw BITS Icon
+# Set Position, Size
+# Set Text
+Draw-VisioIcon -IconPath "c:\!\BITS.jpg" -Width 0.5417 -Height 0.5417 -PinX 10.974 -PinY 8.2344
+
+# Step 42.
+# Draw Line communication from BITS to P2V Source
+# Set Arrow
+Draw-VisioLine -BeginX 10.9844 -BeginY 8.5104 -EndX 10.9844 -EndY 8.75 -LineColor "RGB(255,255,255)" -BeginArrow 4 -EndArrow 4
+
+# Step 43.
+# Draw Line communication from BITS to Host
+# Set Arrow
+Draw-VisioLine -BeginX 10.9844 -BeginY 7.6849 -EndX 10.9844 -EndY 7.9219 -LineColor "RGB(255,255,255)" -BeginArrow 4 -EndArrow 4
+
+# Step 44.
+# Draw BITS Rectangle, Set Size, Set Colour
+# Set Text, Align
+# Draw Line
+Draw-VisioItem -Master "Rectangle" -X 10.9844 -Y 5.6555 -Width 2.75 -Height 0.5625 -FillForegnd "RGB(255,255,0)"`
+ -LinePattern 1 -Text "BITS" -ParaHorzAlign '0'`
+ -CharSize "14 pt"
+
+# Step 45.
+# Draw BITS Icon
+# Set Position, Size
+# Set Text
+Draw-VisioIcon -IconPath "c:\!\BITS.jpg" -Width 0.5417 -Height 0.5417 -PinX 10.974 -PinY 5.6607
+
+# Step 46.
+# Draw Line communication from BITS to Host 
+# Set Arrow
+Draw-VisioLine -BeginX 10.9844 -BeginY 5.9245 -EndX 10.9844 -EndY 6.1901 -LineColor "RGB(255,255,255)" -BeginArrow 4 -EndArrow 4
+
+# Step 47.
+# Draw Line communication from BITS to Library
+# Set Arrow
+Draw-VisioLine -BeginX 10.9792 -BeginY 5.1042 -EndX 10.9792 -EndY 5.375 -LineColor "RGB(255,255,255)" -BeginArrow 4 -EndArrow 4
+
+# Step 48.
+# Resise Page To Fit Contents
+Resize-VisioPageToFitContents
+
+# Step 49.
+# Save Document
+# And Quit Application
+Save-VisioDocument -File 'C:\!\MsSCVMM2007Arch.vsd'
+Close-VisioApplication
